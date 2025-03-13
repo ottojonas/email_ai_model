@@ -99,7 +99,7 @@ def respond_to_email(
     else:
         return "no quote detected"
 
-
+# * process each email and return a response
 responses = [] 
 for index, row in emails.iterrows(): 
     response = respond_to_email(row["content"], row["subject"], row["requestedItems"], row["isAllowedDomain"])
