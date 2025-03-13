@@ -1,7 +1,6 @@
 import gymnasium as gym
 import numpy as np
 
-
 class EmailEnv(gym.Env):
     def __init__(self, X, y):
         super(EmailEnv, self).__init__()
@@ -23,7 +22,9 @@ class EmailEnv(gym.Env):
         reward = 0
         done = False
         if action == self.y[self.current_index]:
-            reward = 1
+            reward = 10
+        else:
+            reward = -1
         self.current_index += 1
         if self.current_index >= self.X.shape[0]:
             done = True
